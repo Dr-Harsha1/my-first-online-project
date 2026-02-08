@@ -77,12 +77,14 @@
         </div>
     </nav>
 
-    <header class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
+    <header id="about" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
         <div class="animate__animated animate__fadeInDown">
-            <div class="w-32 h-32 mx-auto mb-8 rounded-full border-2 border-sky-500/50 p-1 relative">
-                <div class="w-full h-full rounded-full bg-slate-800 bg-[url('profile.png')] bg-cover bg-center overflow-hidden flex items-center justify-center">
-                    <i class="fa-solid fa-user-doctor text-4xl text-sky-500/50"></i> </div>
-                <div class="absolute bottom-0 right-0 w-8 h-8 bg-emerald-500 rounded-full border-4 border-slate-900 animate-pulse" title="Available for Work"></div>
+            <div class="w-40 h-40 mx-auto mb-8 rounded-full border-4 border-sky-500/50 p-1 relative shadow-[0_0_30px_rgba(56,189,248,0.3)]">
+                <div class="w-full h-full rounded-full bg-slate-800 bg-cover bg-center overflow-hidden flex items-center justify-center">
+                    <img src="profile.png" alt="Dr. Harshavardhan Reddy" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <i class="fa-solid fa-user-doctor text-5xl text-sky-500/50 hidden"></i> 
+                </div>
+                <div class="absolute bottom-2 right-2 w-8 h-8 bg-emerald-500 rounded-full border-4 border-slate-900 animate-pulse" title="Available for Work"></div>
             </div>
 
             <div class="inline-block px-4 py-1 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-400 text-xs font-bold mb-6 tracking-widest uppercase">
@@ -211,61 +213,80 @@
     <section id="projects" class="py-20 px-6 max-w-7xl mx-auto">
         <h2 class="text-3xl font-bold mb-16 text-center">Interactive <span class="text-sky-400">AI Modules</span></h2>
         
-        <div class="grid lg:grid-cols-3 gap-8">
-            <div class="glass p-8 rounded-2xl flex flex-col justify-between group">
+        <div class="grid lg:grid-cols-2 xl:grid-cols-4 gap-6">
+            <div class="glass p-6 rounded-2xl flex flex-col justify-between group">
                 <div>
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="w-12 h-12 bg-sky-500/20 rounded-lg flex items-center justify-center text-sky-400 text-2xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-sky-500/20 rounded-lg flex items-center justify-center text-sky-400 text-xl">
                             <i class="fa-solid fa-user-check"></i>
                         </div>
-                        <span class="text-xs font-mono border border-sky-500/30 text-sky-400 px-2 py-1 rounded">LIVE</span>
+                        <span class="text-[10px] font-mono border border-sky-500/30 text-sky-400 px-2 py-1 rounded">LIVE</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">Truth Scanner</h3>
-                    <p class="text-slate-400 text-sm mb-6">AI Agent cross-referencing clinical claims against medical databases using <strong>Claude 3.5 & GPT-5</strong>.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs bg-slate-800 px-2 py-1 rounded">Python</span>
-                        <span class="text-xs bg-slate-800 px-2 py-1 rounded">Multi-Agent</span>
-                    </div>
+                    <h3 class="text-xl font-bold mb-2">Truth Scanner</h3>
+                    <p class="text-slate-400 text-xs mb-4">AI Agent cross-referencing clinical claims against medical databases using <strong>Claude 3.5 & GPT-5</strong>.</p>
                 </div>
-                <button onclick="runSimulation('truth')" class="w-full py-3 rounded-lg border border-sky-500/30 hover:bg-sky-600 hover:text-white transition font-bold text-sky-400">Run Verification</button>
+                <button onclick="runSimulation('truth')" class="w-full py-2 rounded-lg border border-sky-500/30 hover:bg-sky-600 hover:text-white transition font-bold text-sky-400 text-sm">Run Verification</button>
             </div>
 
-            <div class="glass p-8 rounded-2xl flex flex-col justify-between group">
+            <div class="glass p-6 rounded-2xl flex flex-col justify-between group">
                 <div>
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400 text-2xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400 text-xl">
                             <i class="fa-solid fa-notes-medical"></i>
                         </div>
-                        <span class="text-xs font-mono border border-emerald-500/30 text-emerald-400 px-2 py-1 rounded">BETA</span>
+                        <span class="text-[10px] font-mono border border-emerald-500/30 text-emerald-400 px-2 py-1 rounded">BETA</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">MedData-AI</h3>
-                    <p class="text-slate-400 text-sm mb-6">Predictive modeling engine identifying antibiotic resistance patterns with 90%+ accuracy.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs bg-slate-800 px-2 py-1 rounded">Streamlit</span>
-                        <span class="text-xs bg-slate-800 px-2 py-1 rounded">Scikit-Learn</span>
-                    </div>
+                    <h3 class="text-xl font-bold mb-2">MedData-AI</h3>
+                    <p class="text-slate-400 text-xs mb-4">Predictive modeling engine identifying antibiotic resistance patterns with 90%+ accuracy.</p>
                 </div>
-                <button onclick="runSimulation('med')" class="w-full py-3 rounded-lg border border-emerald-500/30 hover:bg-emerald-600 hover:text-white transition font-bold text-emerald-400">Launch Prediction</button>
+                <button onclick="runSimulation('med')" class="w-full py-2 rounded-lg border border-emerald-500/30 hover:bg-emerald-600 hover:text-white transition font-bold text-emerald-400 text-sm">Launch Prediction</button>
             </div>
 
-            <div class="glass p-8 rounded-2xl flex flex-col justify-between group">
+            <div class="glass p-6 rounded-2xl flex flex-col justify-between group">
                 <div>
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400 text-2xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400 text-xl">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                        <span class="text-[10px] font-mono border border-red-500/30 text-red-400 px-2 py-1 rounded">V2.0</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">YT Automator</h3>
+                    <p class="text-slate-400 text-xs mb-4">Headless Python pipeline generating scripts, voiceovers, and video assets autonomously.</p>
+                </div>
+                <button onclick="runSimulation('yt')" class="w-full py-2 rounded-lg border border-red-500/30 hover:bg-red-600 hover:text-white transition font-bold text-red-400 text-sm">Generate Video</button>
+            </div>
+
+            <div class="glass p-6 rounded-2xl flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400 text-xl">
                             <i class="fa-solid fa-chart-line"></i>
                         </div>
-                        <span class="text-xs font-mono border border-purple-500/30 text-purple-400 px-2 py-1 rounded">V1.0</span>
+                        <span class="text-[10px] font-mono border border-purple-500/30 text-purple-400 px-2 py-1 rounded">V1.0</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">TradeVCP Scanner</h3>
-                    <p class="text-slate-400 text-sm mb-6">Quantitative scanner detecting Volatility Contraction Patterns in Indian Markets (NSE/BSE).</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs bg-slate-800 px-2 py-1 rounded">Pandas</span>
-                        <span class="text-xs bg-slate-800 px-2 py-1 rounded">TradingView API</span>
-                    </div>
+                    <h3 class="text-xl font-bold mb-2">TradeVCP</h3>
+                    <p class="text-slate-400 text-xs mb-4">Quantitative scanner detecting Volatility Contraction Patterns in Indian Markets (NSE/BSE).</p>
                 </div>
-                <button onclick="runSimulation('trade')" class="w-full py-3 rounded-lg border border-purple-500/30 hover:bg-purple-600 hover:text-white transition font-bold text-purple-400">Start Scanner</button>
+                <button onclick="runSimulation('trade')" class="w-full py-2 rounded-lg border border-purple-500/30 hover:bg-purple-600 hover:text-white transition font-bold text-purple-400 text-sm">Start Scanner</button>
             </div>
         </div>
+    </section>
+
+    <section class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center text-slate-300">Innovation <span class="gradient-text">Roadmap</span></h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass p-8 rounded-2xl border-t-4 border-blue-500 relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 text-8xl text-blue-500/10"><i class="fa-solid fa-database"></i></div>
+                <h3 class="text-xl font-bold mb-3 flex items-center"><i class="fa-solid fa-spinner fa-spin text-blue-400 mr-3"></i> Medical Records AI</h3>
+                <p class="text-slate-400 text-sm">Developing a centralized, blockchain-secured AI system for universal medical record interoperability. Currently in architectural planning phase.</p>
+            </div>
+            <div class="glass p-8 rounded-2xl border-t-4 border-pink-500 relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 text-8xl text-pink-500/10"><i class="fa-solid fa-house-medical"></i></div>
+                <h3 class="text-xl font-bold mb-3 flex items-center"><i class="fa-solid fa-spinner fa-spin text-pink-400 mr-3"></i> Smart Home Care</h3>
+                <p class="text-slate-400 text-sm">Designing IoT-enabled AI agents for elderly home care monitoring and automated emergency response. Prototype phase initiating Q4 2026.</p>
+            </div>
+        </div>
+        <p class="text-center text-slate-500 mt-8 italic">...and many more in the pipeline.</p>
     </section>
 
     <section class="py-20 bg-slate-900/50 px-6">
@@ -387,6 +408,16 @@
                     "Pattern Detected: Piperacillin/Tazobactam Sensitivity",
                     "Recommendation Generated.",
                     "Process Complete."
+                ];
+            } else if(type === 'yt') {
+                title.innerText = "YOUTUBE_AUTO_PIPELINE.py";
+                logs = [
+                    "Scraping Trending Topics (AI News)...",
+                    "Generating Script via Claude 3.5 Sonnet...",
+                    "Synthesizing Voiceover (ElevenLabs API)...",
+                    "Editing Video Assets with MoviePy...",
+                    "Rendering Final Cut: 'AI_Update_V2.mp4'",
+                    "Ready for Upload 🎥"
                 ];
             } else {
                 title.innerText = "TRADE_VCP_SCANNER.py";

@@ -3,110 +3,392 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | AI & Automation Expert</title>
+    <title>Dr. Harshavardhan Reddy | AI Automation Architect</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    
     <style>
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
-        .gradient-text { background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap');
+        
+        body { 
+            background-color: #0f172a; 
+            color: #e2e8f0; 
+            font-family: 'Outfit', sans-serif; 
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+        }
+
+        /* 3D Glassmorphism Effects */
+        .glass {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .glass:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: #38bdf8;
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+        }
+
+        /* Neon & Text Effects */
+        .neon-text { text-shadow: 0 0 20px rgba(56, 189, 248, 0.5); }
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Interactive Terminal */
+        .terminal-window {
+            background: #0f172a;
+            border: 1px solid #334155;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Animated Background Particles */
+        #particles {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; pointer-events: none;
+            opacity: 0.6;
+        }
     </style>
 </head>
-<body class="bg-slate-900 text-white font-sans">
+<body>
 
-    <nav class="fixed w-full z-50 glass py-4 px-8 flex justify-between items-center">
-        <h1 class="text-2xl font-bold gradient-text">Dev.Automation</h1>
-        <div class="space-x-6">
-            <a href="#projects" class="hover:text-cyan-400">Projects</a>
-            <a href="#resume" class="hover:text-cyan-400">Resume</a>
-            <a href="mailto:your-email@example.com" class="bg-cyan-600 px-4 py-2 rounded-lg">Contact Me</a>
+    <canvas id="particles"></canvas>
+
+    <nav class="fixed w-full z-50 px-6 py-4 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-wider">DR. HARSHA<span class="text-sky-400">.AI</span></h1>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-sky-400 transition">About</a>
+                <a href="#experience" class="hover:text-sky-400 transition">Experience</a>
+                <a href="#projects" class="hover:text-sky-400 transition">AI Tools</a>
+                <a href="#contact" class="bg-sky-600 hover:bg-sky-500 px-5 py-2 rounded-full text-white transition">Hire Me</a>
+            </div>
         </div>
     </nav>
 
-    <header class="h-screen flex flex-col justify-center items-center text-center px-4">
-        <h2 class="text-6xl font-extrabold mb-4">Building the Future with <span class="gradient-text">AI Automation</span></h2>
-        <p class="text-gray-400 max-w-2xl text-lg">Specializing in Medical AI, Fintech Scanners, and Autonomous Content Engines.</p>
-        <div class="mt-8">
-             <a href="#projects" class="border border-cyan-500 px-8 py-3 rounded-full hover:bg-cyan-500 transition">View My Work</a>
+    <header class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
+        <div class="animate__animated animate__fadeInDown">
+            <div class="w-32 h-32 mx-auto mb-8 rounded-full border-2 border-sky-500/50 p-1 relative">
+                <div class="w-full h-full rounded-full bg-slate-800 bg-[url('profile.png')] bg-cover bg-center overflow-hidden">
+                    <i class="fa-solid fa-user-doctor text-4xl text-sky-500/50 mt-8"></i>
+                </div>
+                <div class="absolute bottom-0 right-0 w-8 h-8 bg-emerald-500 rounded-full border-4 border-slate-900" title="Available for Work"></div>
+            </div>
+
+            <div class="inline-block px-4 py-1 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-400 text-xs font-bold mb-6 tracking-widest uppercase">
+                Bridging Medicine & Code
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                Medical Affairs Leader <br>
+                <span class="gradient-text neon-text">AI Automation Architect</span>
+            </h1>
+            
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Pharm.D & MBA. Expert in building <strong>Autonomous Agents</strong>, <strong>Prompt Engineering (Claude)</strong>, and <strong>Python-Driven Healthcare Solutions</strong>.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#projects" class="group relative px-8 py-4 bg-sky-600 rounded-full font-bold overflow-hidden">
+                    <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                    Launch AI Demos <i class="fa-solid fa-rocket ml-2"></i>
+                </a>
+                <a href="resume.pdf" target="_blank" class="px-8 py-4 rounded-full border border-slate-600 hover:bg-slate-800 transition font-medium">
+                    Download Resume <i class="fa-solid fa-download ml-2"></i>
+                </a>
+            </div>
         </div>
     </header>
 
-    <section id="projects" class="py-20 px-8 max-w-6xl mx-auto">
-        <h3 class="text-3xl font-bold mb-12 border-b border-gray-700 pb-4">Featured Applications</h3>
-        <div class="grid md:grid-cols-3 gap-8">
+    <section id="experience" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-16 text-center">Professional <span class="text-sky-400">Trajectory</span></h2>
+        
+        <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
             
-            <div class="glass p-6 rounded-2xl hover:scale-105 transition cursor-pointer" onclick="openModel('med-ai')">
-                <i class="fa-solid fa-microscope text-cyan-400 text-3xl mb-4"></i>
-                <h4 class="text-xl font-bold mb-2">MedData-AI</h4>
-                <p class="text-gray-400 text-sm">Antibiotic resistance prediction tool for clinical decision support.</p>
-                <button class="mt-4 text-cyan-400 font-semibold">Live Preview →</button>
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-sky-500 bg-slate-900 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_20px_rgba(14,165,233,0.5)]">
+                    <i class="fa-solid fa-heart-pulse text-sky-400 text-sm"></i>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 rounded-xl">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-xl">Medical Affairs & AI Architect</h3>
+                        <span class="text-xs bg-sky-900/50 px-2 py-1 rounded text-sky-300">Present</span>
+                    </div>
+                    <p class="text-sky-400 text-sm mb-4 font-semibold">LifeSignals</p>
+                    <ul class="text-sm text-slate-400 list-disc ml-4 space-y-2">
+                        <li>Architecting internal AI tools (Python/Claude) reducing data processing time by 40%.</li>
+                        <li>Managing Tier-1 KOLs and leading clinical strategy for global device launches.</li>
+                        <li>Bridging the gap between clinical teams and engineering for GTM readiness.</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="glass p-6 rounded-2xl hover:scale-105 transition cursor-pointer" onclick="openModel('trade-vcp')">
-                <i class="fa-solid fa-chart-line text-green-400 text-3xl mb-4"></i>
-                <h4 class="text-xl font-bold mb-2">TradeVCP Scanner</h4>
-                <p class="text-gray-400 text-sm">Real-time Indian Stock Market breakout detector using VCP analysis.</p>
-                <button class="mt-4 text-green-400 font-semibold">Live Preview →</button>
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-purple-500 bg-slate-900 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                    <i class="fa-solid fa-code text-purple-400 text-sm"></i>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 rounded-xl border-purple-500/20">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-xl">AI Automation Consultant</h3>
+                        <span class="text-xs bg-purple-900/50 px-2 py-1 rounded text-purple-300">Independent</span>
+                    </div>
+                    <p class="text-purple-400 text-sm mb-4 font-semibold">Self-Employed</p>
+                    <ul class="text-sm text-slate-400 list-disc ml-4 space-y-2">
+                        <li>Developing "Truth Scanner" & "MedData-AI" using LLM Orchestration.</li>
+                        <li>Building commercial GTM automation pipelines for Pharma clients.</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="glass p-6 rounded-2xl hover:scale-105 transition cursor-pointer" onclick="openModel('yt-auto')">
-                <i class="fa-brands fa-youtube text-red-500 text-3xl mb-4"></i>
-                <h4 class="text-xl font-bold mb-2">PyTube Engine</h4>
-                <p class="text-gray-400 text-sm">Automated video generation pipeline for faceless YouTube channels.</p>
-                <button class="mt-4 text-red-500 font-semibold">Live Preview →</button>
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-900 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                    <i class="fa-solid fa-dna text-slate-400 text-sm"></i>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 rounded-xl">
+                    <h3 class="font-bold text-xl">Medical Science Liaison (MSL)</h3>
+                    <p class="text-sky-400 text-sm mb-2">Hetero Labs</p>
+                    <p class="text-sm text-slate-400">Spearheaded Oncology/Neurology KOL mapping and data dissemination. Delivered advanced medical training to internal teams.</p>
+                </div>
+            </div>
+
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-900 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                    <i class="fa-solid fa-file-medical text-slate-400 text-sm"></i>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 rounded-xl">
+                    <h3 class="font-bold text-xl">Scientific Writer</h3>
+                    <p class="text-sky-400 text-sm mb-2">Indegene</p>
+                    <p class="text-sm text-slate-400">Authored high-impact clinical manuscripts. Automated literature review workflows to reduce errors.</p>
+                </div>
+            </div>
+
+             <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-900 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                    <i class="fa-solid fa-shield-virus text-slate-400 text-sm"></i>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 rounded-xl">
+                    <h3 class="font-bold text-xl">Drug Safety Associate</h3>
+                    <p class="text-sky-400 text-sm mb-2">Navitas Life Sciences</p>
+                    <p class="text-sm text-slate-400">Monitored pharmacovigilance reports and assisted in safety signal detection.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-16 text-center">Interactive <span class="text-sky-400">AI Modules</span></h2>
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="glass p-8 rounded-2xl flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-12 h-12 bg-sky-500/20 rounded-lg flex items-center justify-center text-sky-400 text-2xl">
+                            <i class="fa-solid fa-user-check"></i>
+                        </div>
+                        <span class="text-xs font-mono border border-sky-500/30 text-sky-400 px-2 py-1 rounded">LIVE</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Truth Scanner</h3>
+                    <p class="text-slate-400 text-sm mb-6">AI Agent that cross-references clinical claims against live medical databases to ensure data integrity.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs bg-slate-800 px-2 py-1 rounded">Python</span>
+                        <span class="text-xs bg-slate-800 px-2 py-1 rounded">Claude API</span>
+                    </div>
+                </div>
+                <button onclick="runSimulation('truth')" class="w-full py-3 rounded-lg border border-sky-500/30 hover:bg-sky-600 hover:text-white transition font-bold text-sky-400">Run Verification</button>
+            </div>
+
+            <div class="glass p-8 rounded-2xl flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400 text-2xl">
+                            <i class="fa-solid fa-notes-medical"></i>
+                        </div>
+                        <span class="text-xs font-mono border border-emerald-500/30 text-emerald-400 px-2 py-1 rounded">BETA</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">MedData-AI</h3>
+                    <p class="text-slate-400 text-sm mb-6">Predictive modeling engine identifying antibiotic resistance patterns with 90%+ accuracy.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs bg-slate-800 px-2 py-1 rounded">Streamlit</span>
+                        <span class="text-xs bg-slate-800 px-2 py-1 rounded">Scikit-Learn</span>
+                    </div>
+                </div>
+                <button onclick="runSimulation('med')" class="w-full py-3 rounded-lg border border-emerald-500/30 hover:bg-emerald-600 hover:text-white transition font-bold text-emerald-400">Launch Prediction</button>
+            </div>
+
+            <div class="glass p-8 rounded-2xl flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400 text-2xl">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <span class="text-xs font-mono border border-purple-500/30 text-purple-400 px-2 py-1 rounded">V1.0</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">TradeVCP Scanner</h3>
+                    <p class="text-slate-400 text-sm mb-6">Quantitative scanner detecting Volatility Contraction Patterns in Indian Markets (NSE/BSE).</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs bg-slate-800 px-2 py-1 rounded">Pandas</span>
+                        <span class="text-xs bg-slate-800 px-2 py-1 rounded">TradingView API</span>
+                    </div>
+                </div>
+                <button onclick="runSimulation('trade')" class="w-full py-3 rounded-lg border border-purple-500/30 hover:bg-purple-600 hover:text-white transition font-bold text-purple-400">Start Scanner</button>
             </div>
         </div>
     </section>
 
-    <div id="modelModal" class="fixed inset-0 bg-black bg-opacity-90 z-[100] hidden flex flex-col justify-center items-center p-4">
-        <div class="w-full max-w-4xl bg-slate-800 rounded-3xl overflow-hidden shadow-2xl">
-            <div class="p-4 bg-slate-700 flex justify-between items-center">
-                <span id="modalTitle" class="font-bold">App Simulation</span>
-                <button onclick="closeModel()" class="text-2xl">&times;</button>
-            </div>
-            <div id="modalContent" class="h-[500px] p-8 overflow-y-auto">
+    <section class="py-20 bg-slate-900/50 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold mb-8 flex items-center"><i class="fa-solid fa-graduation-cap text-sky-400 mr-3"></i> Education</h3>
+                <div class="space-y-6">
+                    <div class="border-l-2 border-sky-500 pl-4">
+                        <h4 class="font-bold">Doctor of Pharmacy (Pharm.D)</h4>
+                        <p class="text-sm text-slate-400">Rajiv Gandhi University of Health Sciences</p>
+                    </div>
+                    <div class="border-l-2 border-slate-700 pl-4">
+                        <h4 class="font-bold">Master of Business Administration (MBA)</h4>
+                    </div>
+                    <div class="border-l-2 border-purple-500 pl-4">
+                        <h4 class="font-bold text-purple-400">AI & Prompt Engineering (Ongoing)</h4>
+                        <p class="text-sm text-slate-400">Self-Directed Certification Path</p>
+                    </div>
                 </div>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-8 flex items-center"><i class="fa-solid fa-trophy text-yellow-400 mr-3"></i> Awards</h3>
+                <div class="glass p-6 rounded-xl mb-4">
+                    <h4 class="font-bold text-yellow-400">"Make It Happen" Award</h4>
+                    <p class="text-sm text-slate-300">Recognized for rapid deployment of technical solutions in high-pressure environments.</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h4 class="font-bold text-sky-400">Best Contribution Award</h4>
+                    <p class="text-sm text-slate-300">For architectural leadership in cross-functional automation projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-12 border-t border-white/5 text-center">
+        <h2 class="text-3xl font-bold mb-6">Ready to Automate the Future?</h2>
+        <div class="flex justify-center gap-6 mb-8">
+            <a href="https://linkedin.com/in/dr-harshavardhan-reddy-7441a9219/" class="text-3xl hover:text-sky-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:reddy.harsha183@gmail.com" class="text-3xl hover:text-sky-400 transition"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#" class="text-3xl hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p class="text-slate-500 text-sm">© 2026 Dr. Harshavardhan Reddy. Built with AI-Assisted Engineering.</p>
+    </footer>
+
+    <div id="sim-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-lg bg-black/60">
+        <div class="w-full max-w-2xl terminal-window rounded-lg overflow-hidden animate__animated animate__zoomIn">
+            <div class="bg-slate-800 p-2 flex justify-between items-center border-b border-slate-600">
+                <span id="sim-title" class="text-xs font-bold text-green-400 ml-2">TERMINAL_V1.0</span>
+                <button onclick="closeSim()" class="text-red-400 hover:text-red-500 px-2">✖</button>
+            </div>
+            <div id="sim-output" class="p-6 h-64 overflow-y-auto text-green-500 text-sm space-y-2">
+                </div>
+            <div class="p-2 bg-slate-900 border-t border-slate-700">
+                <span class="text-green-500">></span> <span class="animate-pulse">_</span>
+            </div>
         </div>
     </div>
 
-    <section id="resume" class="py-20 bg-slate-800 px-8 text-center">
-        <h3 class="text-3xl font-bold mb-8">Professional Resume</h3>
-        <div class="max-w-4xl mx-auto glass p-4 rounded-xl">
-            <iframe src="resume.pdf" class="w-full h-[600px] rounded-lg" frameborder="0"></iframe>
-        </div>
-        <a href="resume.pdf" download class="mt-6 inline-block bg-cyan-600 px-6 py-2 rounded-lg font-bold">Download CV</a>
-    </section>
-
-    <footer class="py-10 text-center text-gray-500 border-t border-gray-800">
-        <p>© 2026 Developed by [Your Name]. Built with Python & Tailwind.</p>
-    </footer>
-
     <script>
-        function openModel(type) {
-            const modal = document.getElementById('modelModal');
-            const content = document.getElementById('modalContent');
-            const title = document.getElementById('modalTitle');
-            modal.classList.remove('hidden');
-
-            if(type === 'med-ai') {
-                title.innerText = "Working Model: MedData-AI";
-                content.innerHTML = `
-                    <div class="text-left">
-                        <h5 class="text-cyan-400 mb-4 font-mono">> Initializing ML Model...</h5>
-                        <p class="mb-2">Enter Lab Marker (e.g., CRP): <input class="bg-slate-900 border p-1 rounded"> </p>
-                        <button class="bg-cyan-600 px-4 py-1 rounded" onclick="alert('Prediction: High Resistance Risk')">Run Analysis</button>
-                        <div class="mt-6 p-4 bg-black rounded font-mono text-sm text-green-400">
-                            [System] Loading Weights... <br>
-                            [System] Analysis Complete. Confidence 94%.
-                        </div>
-                    </div>`;
-            } else if(type === 'trade-vcp') {
-                title.innerText = "Working Model: TradeVCP Scanner";
-                content.innerHTML = `<p>Fetching live NIFTY 50 data...</p><div class='animate-pulse text-green-400 mt-4'>Searching for VCP Tightening Patterns...</div>`;
-            }
+        // Particle Effect (Simplified for Performance)
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        let particles = [];
+        for(let i=0; i<50; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                size: Math.random() * 2
+            });
         }
 
-        function closeModel() {
-            document.getElementById('modelModal').classList.add('hidden');
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(56, 189, 248, 0.5)';
+            
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+                if(p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if(p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Simulation Logic
+        function runSimulation(type) {
+            const modal = document.getElementById('sim-modal');
+            const output = document.getElementById('sim-output');
+            const title = document.getElementById('sim-title');
+            modal.classList.remove('hidden');
+            output.innerHTML = '';
+
+            let logs = [];
+            if(type === 'truth') {
+                title.innerText = "TRUTH_SCANNER_AGENT.py";
+                logs = [
+                    "Initializing Agentic Workflow...",
+                    "Connecting to PubMed Database...",
+                    "Scanning Claim: 'Antibiotic efficacy in localized sepsis'...",
+                    "[VERIFIED] Source found: ClinicalTrials.gov (ID: NCT0432)",
+                    "Cross-referencing Impact Factor...",
+                    "Confidence Score: 98.4% ✅"
+                ];
+            } else if(type === 'med') {
+                title.innerText = "MED_DATA_PREDICTOR.py";
+                logs = [
+                    "Loading Random Forest Model (v2.4)...",
+                    "Ingesting Patient Parameters: [Age: 45, WBC: 12.5, CRP: High]",
+                    "Analyzing Resistance Markers...",
+                    "Pattern Detected: Piperacillin/Tazobactam Sensitivity",
+                    "Recommendation Generated.",
+                    "Process Complete."
+                ];
+            } else {
+                title.innerText = "TRADE_VCP_SCANNER.py";
+                logs = [
+                    "Connecting to NSE Real-time Feed...",
+                    "Scanning 500 Tickers...",
+                    "Detecting Volatility Contraction...",
+                    "Alert: RELIANCE - 3rd Contraction Phase Detected",
+                    "Volume Dry Up Confirmed.",
+                    "Breakout Signal: WATCHLIST ADDED 📈"
+                ];
+            }
+
+            let delay = 0;
+            logs.forEach(log => {
+                setTimeout(() => {
+                    output.innerHTML += `<div>> ${log}</div>`;
+                    output.scrollTop = output.scrollHeight;
+                }, delay);
+                delay += 800;
+            });
+        }
+
+        function closeSim() {
+            document.getElementById('sim-modal').classList.add('hidden');
         }
     </script>
 </body>
